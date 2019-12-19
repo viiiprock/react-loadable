@@ -30,16 +30,12 @@ app.get('/', (req, res) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>My App</title>
-        ${styles.map(style => {
-          return `<link href="/dist/${style.file}" rel="stylesheet"/>`;
-        }).join('\n')}
+        ${styles.map(style => {return `<link href="/dist/${style.file}" rel="stylesheet"/>`;}).join('\n')}
       </head>
       <body>
         <div id="app">${html}</div>
         <script src="/dist/main.js"></script>
-        ${scripts.map(script => {
-          return `<script src="/dist/${script.file}"></script>`
-        }).join('\n')}
+        ${scripts.map(script => {return `<script src="/dist/${script.file}"></script>`}).join('\n')}
         <script>window.main();</script>
       </body>
     </html>
